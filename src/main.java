@@ -12,7 +12,7 @@ public class main {
         LocalDate startYear = LocalDate.of(fromYear, 1, 1);
         LocalDate endYear = LocalDate.of(toYear, 1, 1);
         StringBuilder input = new StringBuilder();
-        for (; startYear.isBefore(endYear); startYear.plusDays(1)) {
+        for (; startYear.isBefore(endYear); startYear = startYear.plusDays(1)) {
             DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("yyyyMMdd");
             String formattedDate = startYear.format(formatDate);
             input.append(formattedDate);
@@ -21,7 +21,7 @@ public class main {
                 System.out.println(startYear.toString());
             }
             input.setLength(0);
-            startYear = startYear.plusDays(1);
+
         }
 
 
